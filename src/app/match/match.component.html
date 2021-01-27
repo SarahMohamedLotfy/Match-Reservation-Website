@@ -1,0 +1,110 @@
+<div>
+    <h2>match</h2>
+    <table>
+        <tr>
+            <td>Home Team:</td><td>{{match.HomeTeam}}</td>
+        </tr>
+        <tr>
+            <td>Away Team:</td>
+            <td>{{match.AwayTeam}}</td>
+        </tr>
+        <tr>
+            <td>Match Venue:</td>
+            <td>{{match.MatchVenue}}</td>
+        </tr>
+        <tr>
+            <td>Match Date:</td>
+            <td>{{match.Date}}</td>
+        </tr>
+        <tr>
+            <td>Match Time:</td>
+            <td>{{match.Time}}</td>
+        </tr>
+        <tr>
+            <td>Main Referee:</td>
+            <td>{{match.MainReferee}}</td>
+        </tr>
+        <tr>
+            <td>Linesman 1:</td>
+            <td>{{match.Linesman}}</td>
+        </tr>
+        <tr>
+            <td>Linesman 2:</td>
+            <td>{{match.Linesman2}}</td>
+        </tr>
+    </table>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Seats</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let seat of seats">
+            <td>{{seat.seatnumber}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="seatlayout">
+    <div class="seat" *ngFor="let seat of seats">
+       <div class="seatcont1">
+          <label style="color:red; font-weight: bold;" for="checkbox1"> {{seat.seatnumber}}</label>
+       </div>
+    </div>
+    <div class="seat" *ngFor="let seat of vacantseats">
+        <input type="checkbox" >
+        <label > {{seat}}</label>
+     </div>
+
+    <div class="seat">
+       <div class="seatcont2">
+         <!----> <input type="checkbox" id="checkbox2">
+          <label for="checkbox2"> 2</label>
+       </div>
+    </div>
+    <div class="seat">
+       <div class="seatcont3">
+          <input type="checkbox" id="checkbox3">
+          <label for="checkbox3"> 3</label>
+       </div>
+    </div>
+
+    <div class="seat">
+        <div class="seatcont3">
+           <input type="checkbox" id="checkbox3">
+           <label for="checkbox3"> 3</label>
+        </div>
+     </div>
+     <div class="seat">
+        <div class="seatcont3">
+           <input type="checkbox" id="checkbox3">
+           <label for="checkbox3"> 3</label>
+        </div>
+     </div>
+     <div class="seat">
+        <div class="seatcont3">
+           <input type="checkbox" id="checkbox3">
+           <label for="checkbox3"> 3</label>
+        </div>
+     </div>
+     <div class="seat">
+        <div class="seatcont3">
+           <input type="checkbox" id="checkbox3">
+           <label for="checkbox3"> 3</label>
+        </div>
+     </div>
+     <div class="seat">
+        <div class="seatcont3">
+           <input type="checkbox" id="checkbox3">
+           <label for="checkbox3"> 3</label>
+        </div>
+     </div>
+     <div class="seat">
+        <div class="seatcont3">
+           <input type="checkbox" id="checkbox3">
+           <label for="checkbox3"> 3</label>
+        </div>
+     </div>
+   </div>
