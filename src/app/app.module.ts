@@ -12,6 +12,9 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-mat
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddStaduimComponent } from './add-staduim/add-staduim.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RegisterGuestComponent } from './register-guest/register-guest.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AddMatchComponent,
     MatchComponent,
     HomeComponent,
-    AddStaduimComponent
+    AddStaduimComponent,
+    RegisterGuestComponent,
+    SignUpComponent,
+    SignInComponent
     ],
   imports: [
     BrowserModule,

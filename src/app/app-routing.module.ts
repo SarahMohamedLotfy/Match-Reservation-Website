@@ -4,15 +4,32 @@ import {AddMatchComponent} from './add-match/add-match.component';
 import { MatchComponent } from './match/match.component';
 import { HomeComponent } from './home/home.component';
 import { AddStaduimComponent } from './add-staduim/add-staduim.component';
+import { RegisterGuestComponent } from './register-guest/register-guest.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: 'addMatch', component: AddMatchComponent },
   {path: "match/:id", component: MatchComponent},
-  {path: "addStaduim", component: AddStaduimComponent}];
+  {path: "addStaduim", component: AddStaduimComponent},
+  {path: "registerGuest", component: RegisterGuestComponent,
+  children: [
+    { path: 'signIn', component: SignInComponent },
+    { path: 'signUp', component: SignUpComponent }
+  ]
+    }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// export class routingComponents = [HomeComponent,
+//                                   AddMatchComponent,
+//                                   MatchComponent,
+//                                   AddStaduimComponent,
+//                                   RegisterGuestComponent,
+//                                   SignUpComponent,
+//                                   SignInComponent]

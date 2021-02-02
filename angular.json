@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "matchRegistration"
+  "defaultProject": "matchRegistration",
+  "cli": {
+    "analytics": "390062a0-3e66-406a-abcc-5d5ed204d599"
+  }
 }
