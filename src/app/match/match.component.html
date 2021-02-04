@@ -1,110 +1,98 @@
-<div>
-    <h2>match</h2>
-    <table>
-        <tr>
-            <td>Home Team:</td><td>{{match.HomeTeam}}</td>
-        </tr>
-        <tr>
-            <td>Away Team:</td>
-            <td>{{match.AwayTeam}}</td>
-        </tr>
-        <tr>
-            <td>Match Venue:</td>
-            <td>{{match.MatchVenue}}</td>
-        </tr>
-        <tr>
-            <td>Match Date:</td>
-            <td>{{match.Date}}</td>
-        </tr>
-        <tr>
-            <td>Match Time:</td>
-            <td>{{match.Time}}</td>
-        </tr>
-        <tr>
-            <td>Main Referee:</td>
-            <td>{{match.MainReferee}}</td>
-        </tr>
-        <tr>
-            <td>Linesman 1:</td>
-            <td>{{match.Linesman}}</td>
-        </tr>
-        <tr>
-            <td>Linesman 2:</td>
-            <td>{{match.Linesman2}}</td>
-        </tr>
-    </table>
+<div class="container"> 
+   <p style="color:purple;  font-weight: bold; font-size: 30px; padding-bottom: 20px;">Matche details</p>
+
+
+   <table class="styled-table">
+      <tbody>
+              <tr class="active-row">
+              <td style="color: purple;" >Home Team:</td>
+              <td>{{match.HomeTeam}}</td>
+               </tr>
+               <tr class="active-row">
+                  <td style="color: purple;">Away Team:</td>
+                  <td>{{match.AwayTeam}}</td>
+              </tr>
+              <tr class="active-row">
+               <td style="color: purple;">Match Venue:</td>
+               <td>{{match.MatchVenue}}</td>
+           </tr>
+             
+        <tr class="active-row">
+         <td style="color: purple;">Match Date:</td>
+         <td>{{match.Date}}</td>
+     </tr>
+
+     <tr class="active-row">
+      <td style="color: purple;">Main Referee:</td>
+      <td>{{match.MainReferee}}</td>
+  </tr>
+  <tr class="active-row">
+      <td style="color: purple;">Linesman 1:</td>
+      <td>{{match.Linesman}}</td>
+  </tr>
+  <tr class="active-row">
+      <td style="color: purple;">Linesman 2:</td>
+      <td>{{match.Linesman2}}</td>
+  </tr>
+      </tbody>
+  </table>
+
+
+
+
+    <br>
+    <p style="color:purple;  font-weight: bold; font-size: 27px; padding-bottom: 20px;">Reserve seats</p>
+
+  <div style="display:inline-block;vertical-align:top;">
+   <input class="larger" type="checkbox" [disabled] = "true"
+   [checked]=false> 
 </div>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Seats</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let seat of seats">
-            <td>{{seat.seatnumber}}</td>
-        </tr>
-    </tbody>
-</table>
+<div style="display:inline-block;">
+   <div>Vacant</div>
+</div>
+<br>
+  <div style="display:inline-block;vertical-align:top;">
+   <input class="larger" type="checkbox" [disabled] = "true"
+   [checked]=true> 
+</div>
+<div style="display:inline-block;">
+   <div>Reserved</div>
+</div>
 
-<div class="seatlayout">
-    <div class="seat" *ngFor="let seat of seats">
-       <div class="seatcont1">
-          <label style="color:red; font-weight: bold;" for="checkbox1"> {{seat.seatnumber}}</label>
-       </div>
-    </div>
-    <div class="seat" *ngFor="let seat of vacantseats">
-        <input type="checkbox" >
-        <label > {{seat}}</label>
-     </div>
 
-    <div class="seat">
-       <div class="seatcont2">
-         <!----> <input type="checkbox" id="checkbox2">
-          <label for="checkbox2"> 2</label>
-       </div>
+    <div class="grid-container">
+    <div class="grid-item" *ngFor="let item of options">
+      <input class="larger" type="checkbox" [disabled] = "checked(item)"
+    
+      (change)="onChange($event.target.checked, item)"
+      [checked]="checked(item)"> {{item}}
     </div>
-    <div class="seat">
-       <div class="seatcont3">
-          <input type="checkbox" id="checkbox3">
-          <label for="checkbox3"> 3</label>
-       </div>
     </div>
+    <br>{{selectednew.length}} items selected <br>    
+    <h3>Selected seats</h3>
+    {{selectednew | json}}
+    <br>
+    <br>
 
-    <div class="seat">
-        <div class="seatcont3">
-           <input type="checkbox" id="checkbox3">
-           <label for="checkbox3"> 3</label>
-        </div>
-     </div>
-     <div class="seat">
-        <div class="seatcont3">
-           <input type="checkbox" id="checkbox3">
-           <label for="checkbox3"> 3</label>
-        </div>
-     </div>
-     <div class="seat">
-        <div class="seatcont3">
-           <input type="checkbox" id="checkbox3">
-           <label for="checkbox3"> 3</label>
-        </div>
-     </div>
-     <div class="seat">
-        <div class="seatcont3">
-           <input type="checkbox" id="checkbox3">
-           <label for="checkbox3"> 3</label>
-        </div>
-     </div>
-     <div class="seat">
-        <div class="seatcont3">
-           <input type="checkbox" id="checkbox3">
-           <label for="checkbox3"> 3</label>
-        </div>
-     </div>
-     <div class="seat">
-        <div class="seatcont3">
-           <input type="checkbox" id="checkbox3">
-           <label for="checkbox3"> 3</label>
-        </div>
-     </div>
-   </div>
+    <button class="button"   (click)="save()">Save</button>
+
+    
+
+<br>
+ 
+<div id="formm" style="display: none;">
+  <form  #myForm="ngForm"  (ngSubmit) = "submit(myForm)" action="/action_page.php">
+   <label style="font-size: 15px;" >Enter your credit card number</label>
+   <input  class="inputcard"  type="text" id="credit" ngModel name="credit" placeholder="Your credit card number">
+
+   <label style="font-size: 15px;" for="lname">Enter your pin number</label>
+   <input class="inputcard" type="password" id="pass" ngModel name="pass" placeholder="Your password" maxlength="4" size="4">
+
+   <button  class="inputcard" >Submit </button>
+ </form>
+</div>
+
+<div id="ticket" style="display: none;"> 
+   Your ticket number is : {{ticketnumber}}
+</div>
+

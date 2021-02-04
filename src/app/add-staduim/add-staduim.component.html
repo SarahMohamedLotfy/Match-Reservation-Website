@@ -1,24 +1,24 @@
 <div class="container">
-    <form #myForm="ngForm">
+    <form id ="formm" #myForm="ngForm">
         <div class="form-group">
             <label for="exampleInputEmail1">Staduim Name</label>
-            <input class="form-control" name="name" [(ngModel)]="staduimObject.name" >
+            <input type="text" class="form-control" name="name" [(ngModel)]="staduimObject.name" >
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Staduim shape definition </label>
-            <input class="form-control" name="shape" [(ngModel)]="staduimObject.shape" >
+            <input type="text"class="form-control" name="shape" [(ngModel)]="staduimObject.shape" >
         </div>
         <div class="form-group">
             <label for="exampleInputEmail">Staduim Number of seats</label>
-            <input  class="form-control" name="noofseats" [(ngModel)]="staduimObject.noofseats">
+            <input  type="text"class="form-control" name="noofseats" [(ngModel)]="staduimObject.noofseats">
         </div>
 
-        <button type="button" class="btn btn-primary" (click)="addSatduim(myForm,myForm.value)">
+        <button class="button" type="button"(click)="addSatduim(myForm,myForm.value)">
             Add</button>
     </form>
     <br>
-    <table class="table">
+    <table  class="styled-table">
         <thead>
             <tr>
                 <th scope="col">Staduim Name</th>
@@ -27,7 +27,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let staduim of allStaduims">
+            <tr class="active-row" *ngFor="let staduim of allStaduims">
                 <td>{{staduim.name}}</td>
                 <td>{{staduim.shape}}</td>
                 <td>{{staduim.noofseats}}</td>
