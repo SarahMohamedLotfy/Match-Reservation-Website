@@ -13,8 +13,7 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  powers = ['Really Smart', 'Super Flexible',
-            'Super Hot', 'Weather Changer'];
+  passwordRegex = /^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/;
 
   // model = new signUpForm(
     

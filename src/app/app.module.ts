@@ -15,6 +15,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RegisterGuestComponent } from './register-guest/register-guest.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { ViewMatchDetailComponent } from './view-match-detail/view-match-detail.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import { AdminApproveComponent } from './admin-approve/admin-approve.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +30,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
     AddStaduimComponent,
     RegisterGuestComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    ViewMatchDetailComponent,
+    AdminApproveComponent
     ],
   imports: [
     BrowserModule,
@@ -35,9 +42,13 @@ import { SignInComponent } from './sign-in/sign-in.component';
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    MatTableModule,
+    MatButtonModule
     ],
-  providers: [MatchService],
+  providers: [
+    MatchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

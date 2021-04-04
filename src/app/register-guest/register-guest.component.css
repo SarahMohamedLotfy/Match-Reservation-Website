@@ -1,0 +1,49 @@
+body{
+    background-image: linear-gradient(rgb(187, 179, 218), rgb(61, 33, 160));
+    color: rgb(243, 240, 240);
+    font-size: 30px;
+    height: auto;
+}
+
+p {
+    /* height: 10%; */
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px 0px 0px 0px;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.upper-container {
+    padding: 20px;
+    font-size: 30px;
+}
+
+.arch-container {
+    /* padding: 10px 0px; */
+    height: 10%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    /* padding-left: 450px; */
+    display: table;
+    clear: both;
+    margin: 0;
+
+    width: auto;
+    text-align: center;
+}
+
+.arch-table{
+    display: table;
+    clear: both;
+    margin: 0;
+}

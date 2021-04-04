@@ -1,25 +1,51 @@
 <body>
-  <div class="welcome">
-    Welcome To Our Website!
-  </div>
-
-  <div class="outer-card">
-
-    <div class="card">
-      <a routerLink = '/addMatch'> Add Match</a>
+  <div class="opacity-container">
+    <div class="our-name">
+      Welcome To Our Miserable Matches!
     </div>
 
-    <div class="card">
-      <a routerLink = '/addStaduim'> Add staduim</a>
+    <div class="visitor-container">
+
+      <div class="arch-container">
+        <a routerLink = '/addMatch'> Add Match</a>
+      <!-- </div>
+
+      <div class="arch-container"> -->
+        <a routerLink = '/addStaduim'> Add staduim</a>
+      <!-- </div>
+
+      <div class="arch-container"> -->
+        <a routerLink = '/registerGuest'> Register Now! </a>
+      <!-- </div>
+
+      <div class="arch-container"> -->
+        <a routerLink = '/viewMatchDetail'> View Matches Details </a>
+      </div>
+
     </div>
 
-    <div class="card">
-      <a routerLink = '/registerGuest'> Register Now! </a>
+    <div class="info-container">
+      You can view matched, reserve, or delete reservation.
     </div>
 
-    <div class="card">
-      <a routerLink = '/viewMatchDetail'> View Matches Details </a>
+    <div class="second-info-container">
+      We are misterables and hope to pass in the integration phase.
     </div>
 
-  </div>
+    <div class="admin-container" *ngIf="admin">
+
+      <div class="">
+        <a routerLink = '/approveRegister'> View Requests </a>
+      <!-- </div>
+      
+      <div class=""> -->
+        <a routerLink = '/viewAllUsers'> View All Users </a>
+      </div>
+
+    </div>
+    
+
+    <button mat-raised-button class="btn-effect">Click here to see effect!</button>
+
+</div>
 </body>

@@ -8,6 +8,8 @@ import {MatchService} from 'src/app/match.service';
 })
 export class HomeComponent implements OnInit {
 
+  admin = true;
+
   constructor(private matchService: MatchService) { }
 
   ngOnInit(): void {

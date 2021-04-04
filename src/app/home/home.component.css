@@ -4,18 +4,33 @@ table,th,td{
     padding: 10px;
 }
 a{
-    font-size: 30px;
-    color: rgb(133, 124, 132);
+    /* font-size: 30px; */
+    /* color: rgb(133, 124, 132); */
+    color: rgb(218, 211, 219);
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 a:visited{
-    color: rgb(133, 124, 132);
+    /* color: rgb(133, 124, 132); */
+    color: rgb(218, 211, 219);
 }
 a:hover{
-    color: rgb(155, 90, 147);
+    /* color: rgb(155, 90, 147); */
+    color: white;
+    text-shadow: 2px 2px 8px rgb(180, 180, 180);
+    transition: 0.3s;
 }
 
 body{
-    background-color: rgb(189, 189, 189);
+    /* background-color: rgb(61, 33, 160); */
+    color: white;
+    /* background-image: linear-gradient(rgb(187, 179, 218), rgb(61, 33, 160)); */
+    background-image: url("../../images/122874-FIFA_World_Cup-Brazil-stadium.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
 }
 
 .outer-card:after{
@@ -54,4 +69,76 @@ body{
      color: white;
      /* height: 30%; */
      padding: 100px;
+ }
+
+ .opacity-container{
+     background-color: rgb(4, 129, 129, 0.7);
+     width: auto;
+     height: 100%;
+ }
+
+ .our-name{
+     height: 10%;
+     width: 100%;
+     font-size: 50px;
+     text-align: center;
+     padding: 90px 0px 0px 0px;
+     /* color: rgb(106, 134, 109); */
+ }
+
+ .visitor-container{
+    height: 10%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    /* padding-left: 450px; */
+    display: table;
+    clear: both;
+    margin: 0;
+}
+
+.arch-container{
+    /* float: left;
+    padding: 0px 10px 0px 10px; */
+}
+
+.info-container{
+    height: 5%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    margin: 150px 0px 0px 0px;
+    color: rgb(218, 211, 219);
+}
+
+.second-info-container{
+    height: 5%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    font-size: 40px;
+}
+
+.admin-container{
+    height: 10%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+ .btn-effect{
+     margin: 0;
+     position:absolute;
+     align-items: center;
+     width:auto;
+     margin-left:45%;
+     margin-right:45%;
+ }
+
+ .btn-effect:hover{
+     background-color: rgb(5, 170, 60);
  }

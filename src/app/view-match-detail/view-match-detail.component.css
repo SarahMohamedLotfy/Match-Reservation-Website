@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+}
+
+
+.style-table{
+    /* margin: 40px 20px; */
+}
+
+body{
+    background-image: linear-gradient(rgb(187, 179, 218), rgb(61, 33, 160));
+}
+
+.welcome {
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    color: white;
+    /* height: 30%; */
+    padding: 100px;
+}

@@ -7,6 +7,7 @@ import { AddStaduimComponent } from './add-staduim/add-staduim.component';
 import { RegisterGuestComponent } from './register-guest/register-guest.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ViewMatchDetailComponent } from './view-match-detail/view-match-detail.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -18,7 +19,9 @@ const routes: Routes = [
     { path: 'signIn', component: SignInComponent },
     { path: 'signUp', component: SignUpComponent }
   ]
-    }];
+    },
+  { path: 'viewMatchDetail', component: ViewMatchDetailComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

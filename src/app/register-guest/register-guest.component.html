@@ -1,8 +1,23 @@
-<p>Hello Guest!</p>
-New here? 
-<a routerLink = '/registerGuest/signUp'> sing up </a>
-<br>
-already registered? 
-<a routerLink = '/registerGuest/signIn'> sing in </a>
+<body>
+
+    <div class="upper-container">
+
+        <p>Hello Guest!</p>
+        
+        <div class="arch-table">
+        <div class="arch-container" style="float: left;">
+        New here? 
+        <a routerLink = '/registerGuest/signUp'> sing up </a>
+        </div>
+
+        <div class="arch-container" style="float: right;">
+        already registered? 
+        <a routerLink = '/registerGuest/signIn'> sing in </a>
+        </div>
+        </div>
+
+    </div>
+
+</body>
 
 <router-outlet></router-outlet>
