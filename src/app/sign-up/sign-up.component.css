@@ -1,3 +1,29 @@
 .border-control.ng-touched.ng-invalid {
     border: 2px solid rgb(206, 91, 91);
 }
+
+.view-msg {
+    color:rgb(40, 82, 92);
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+body {
+    /* background-color: rgb(4, 129, 129, 0.7); */
+}
+
+.btn-effect{
+    margin: 0;
+    position:absolute;
+    align-items: center;
+    width:auto;
+    margin-left:45%;
+    margin-right:45%;
+}
+
+.btn-effect:hover{
+    background-color: rgb(4, 129, 129, 0.7);
+    color: whitesmoke;
+    transition: 0.3s;
+}

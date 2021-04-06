@@ -19,6 +19,8 @@ import { ViewMatchDetailComponent } from './view-match-detail/view-match-detail.
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { AdminApproveComponent } from './admin-approve/admin-approve.component';
+import { ViewAllUsersComponent } from './view-all-users/view-all-users.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { AdminApproveComponent } from './admin-approve/admin-approve.component';
     SignUpComponent,
     SignInComponent,
     ViewMatchDetailComponent,
-    AdminApproveComponent
+    AdminApproveComponent,
+    ViewAllUsersComponent
     ],
   imports: [
     BrowserModule,
@@ -44,8 +47,12 @@ import { AdminApproveComponent } from './admin-approve/admin-approve.component';
     BrowserAnimationsModule,
     NgbModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule
     ],
+  exports: [
+    MatDatepickerModule
+  ],
   providers: [
     MatchService
   ],

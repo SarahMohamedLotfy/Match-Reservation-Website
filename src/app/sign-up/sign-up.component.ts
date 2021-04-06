@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { signUpForm } from '../../../src/classes/sign-up-from';
+import { userData } from './userData';
+import { Router } from '@angular/router';
+import { MatchService } from '../match.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,12 +11,25 @@ import { signUpForm } from '../../../src/classes/sign-up-from';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matchService: MatchService) { }
 
   ngOnInit(): void {
   }
 
   passwordRegex = /^([0-9]+[a-zA-Z]+|[a-zA-Z]+[0-9]+)[0-9a-zA-Z]*$/;
+  isEdit =false;
+  userObject : userData = {
+    username: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    Date: '',
+    gender: true,
+    city: '',
+    address: '',
+    email: '',
+    role: ''
+  }
 
   // model = new signUpForm(
     
@@ -21,9 +37,27 @@ export class SignUpComponent implements OnInit {
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() { 
+    this.submitted = true;
+    this.isEdit = true;
+    console.log("subityyyyy");
 
-  // TODO: Remove this when we're done
-  // get diagnostic() { return JSON.stringify(this.model); }
+
+  }
+
+  submitSignup(form:any,formObj:any): void {
+    this.matchService.submitSignup(formObj)
+    .subscribe(
+      response => {
+        console.log("signed up");
+        this.isEdit = true;
+      },
+        error => {
+          console.log(error);
+        });
+      form.resetForm();
+      this.isEdit = false;
+  }
+
 
 }

@@ -140,5 +140,7 @@ body{
  }
 
  .btn-effect:hover{
-     background-color: rgb(5, 170, 60);
+     background-color: rgb(4, 129, 129, 0.7);
+     color: whitesmoke;
+     transition: 0.3s;
  }

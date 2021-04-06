@@ -1,3 +1,10 @@
 .border-control.ng-touched.ng-invalid {
     border: 2px solid rgb(206, 91, 91);
 }
+
+.view-msg {
+    color:rgb(40, 82, 92);
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}

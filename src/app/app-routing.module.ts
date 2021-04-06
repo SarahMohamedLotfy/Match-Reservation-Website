@@ -8,6 +8,8 @@ import { RegisterGuestComponent } from './register-guest/register-guest.componen
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ViewMatchDetailComponent } from './view-match-detail/view-match-detail.component';
+import { ViewAllUsersComponent } from './view-all-users/view-all-users.component';
+import { AdminApproveComponent } from './admin-approve/admin-approve.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -20,7 +22,9 @@ const routes: Routes = [
     { path: 'signUp', component: SignUpComponent }
   ]
     },
-  { path: 'viewMatchDetail', component: ViewMatchDetailComponent}
+  { path: 'viewMatchDetail', component: ViewMatchDetailComponent},
+  { path: 'viewRequests', component: AdminApproveComponent},
+  { path: 'viewAllUsers', component: ViewAllUsersComponent}
 ];
 
 @NgModule({
