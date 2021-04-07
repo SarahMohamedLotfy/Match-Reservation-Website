@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
     firstName: '',
     lastName: '',
     Date: '',
-    gender: 'mail',
+    gender: 'male',
     city: '',
     address: '',
     email: '',

@@ -3,6 +3,7 @@ import { signUpForm } from '../../../src/classes/sign-up-from';
 import { userData } from './userData';
 import { Router } from '@angular/router';
 import { MatchService } from '../match.service';
+import {ThemePalette} from '@angular/material/core';
 
 @Component({
   selector: 'app-sign-up',
@@ -30,6 +31,9 @@ export class SignUpComponent implements OnInit {
     email: '',
     role: ''
   }
+  gender: string ='male';
+  // this.userObject.gender: ThemePalette = 'male';
+
 
   // model = new signUpForm(
     

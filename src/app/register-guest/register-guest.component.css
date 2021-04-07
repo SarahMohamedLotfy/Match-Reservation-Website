@@ -47,3 +47,12 @@ a:hover{
     clear: both;
     margin: 0;
 }
+
+.btn-effect{
+    margin: 0;
+    position:absolute;
+    align-items: center;
+    width:auto;
+    margin-left:45%;
+    margin-right:45%;
+}

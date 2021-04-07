@@ -23,6 +23,9 @@ import { ViewAllUsersComponent } from './view-all-users/view-all-users.component
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { AuthGuard } from './auth.guard';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 @NgModule({
@@ -51,7 +54,9 @@ import { AuthGuard } from './auth.guard';
     NgbModule,
     MatTableModule,
     MatButtonModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSlideToggleModule,
+    MatRadioModule
     ],
   exports: [
     MatDatepickerModule

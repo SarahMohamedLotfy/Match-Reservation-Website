@@ -47,18 +47,17 @@
         Gender
         {{userObject.gender}}
         <button mat-raised-button (click)="editGender=true">edit</button>
-        <div class="form-check" *ngIf="editGender">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="maleRadios1" value="option1" checked [(ngModel)]="userObject.gender" name="gender">
-            <label class="form-check-label" for="maleRadios1">
-                male
-            </label>
-        </div>
-        <div class="form-check" *ngIf="editGender">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="femaleRadios2" value="option2">
-            <label class="form-check-label" for="femaleRadios2">
-                female
-            </label>
-        </div>
+        <section class="example-section" *ngIf="editGender">
+            <label class="example-margin">Gender</label>
+            <mat-radio-group [(ngModel)]="userObject.gender" name="gender">
+              <mat-radio-button class="example-margin" value="male">
+                Male
+              </mat-radio-button>
+              <mat-radio-button class="example-margin" value="female">
+                Female
+              </mat-radio-button>
+            </mat-radio-group>
+        </section>
 
         <!-- city -->
         <div class="form-group">
