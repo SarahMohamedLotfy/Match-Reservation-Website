@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
     firstName: '',
     lastName: '',
     Date: '',
-    gender: true,
+    gender: 'mail',
     city: '',
     address: '',
     email: '',
@@ -39,6 +39,26 @@ export class SignInComponent implements OnInit {
         this.successful = true;
         this.wrongUser = false;
         localStorage.setItem('token', response.token)
+
+        let userType = ""
+        this.matchService.getUserType(response.user_name)
+        .subscribe( res => {
+          console.log("username")
+          userType = res.user_type
+      }, error => {console.log(error)})
+        
+        localStorage.setItem('userType', userType)
+        localStorage.setItem('username', response.user_name)
+        localStorage.setItem('password', response.password)
+        localStorage.setItem('firstName', response.first_name)
+        localStorage.setItem('lastName', response.last_name)
+        localStorage.setItem('address', response.address)
+        localStorage.setItem('city', response.city)
+        localStorage.setItem('email', response.mail)
+        localStorage.setItem('day', response.day)
+        localStorage.setItem('month', response.month)
+        localStorage.setItem('year', response.year)
+        localStorage.setItem('gender', response.gender)
         this._router.navigate(['/'])
       },
         error => {

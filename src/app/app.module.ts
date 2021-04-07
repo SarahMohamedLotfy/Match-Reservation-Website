@@ -22,6 +22,7 @@ import { AdminApproveComponent } from './admin-approve/admin-approve.component';
 import { ViewAllUsersComponent } from './view-all-users/view-all-users.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
     MatDatepickerModule
   ],
   providers: [
-    MatchService
+    MatchService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

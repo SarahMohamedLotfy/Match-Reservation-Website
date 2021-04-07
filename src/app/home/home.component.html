@@ -11,10 +11,12 @@
       
         <a routerLink = '/addStaduim'> Add staduim</a>
       
-        <a routerLink = '/registerGuest' *ngIf="userType==2"> Register Now! </a>
-        <a routerLink = '/viewProfile' *ngIf="userType!=2"> Profile </a>
+        <a routerLink = '/registerGuest' *ngIf="!matchService.loggedIn()"> Register Now! </a>
+        <a routerLink = '/viewProfile' *ngIf="matchService.loggedIn()"> Profile </a>
       
-        <a routerLink = '/viewMatchDetail'> View Matches Details </a>
+        <a routerLink = '/' *ngIf="matchService.loggedIn()"> logout </a>
+
+
       </div>
 
     </div>
@@ -27,7 +29,7 @@
       We are misterables and hope to pass in the integration phase.
     </div>
 
-    <div class="admin-container" *ngIf="userType==3">
+    <div class="admin-container" *ngIf="userType=='3'">
 
       <div class="">
         <a routerLink = '/viewRequests'> View Requests </a>

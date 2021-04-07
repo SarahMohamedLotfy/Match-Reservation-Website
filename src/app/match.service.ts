@@ -131,14 +131,13 @@ export class MatchService {
 
   ///////////////////// profile //////////////////////////////
   
-  getUserType(): Observable<any>{
+  getUserType(username: string): Observable<any>{
     var url=  "http://localhost:1337";
-    return this.http.get (`${url}/getusertype/:username`);
+    return this.http.get (`${url}/getusertype/:${username}`);
   }
 
   editUser(data:userData): Observable<any>{     ////////////////////////////
     var url=  "http://localhost:1337";
-    var url = "http://localhost:1337";
     var dayy = (data.Date.substring(8,10));
     var monthh = (data.Date.substring(5,7));
     var monthhint = parseInt(data.Date.substring(5,7));

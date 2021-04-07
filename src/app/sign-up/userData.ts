@@ -7,7 +7,7 @@ export interface userData {
     lastName?: string,
     Date?: any,
     Time?:any,
-    gender?: boolean,
+    gender?: string,
     city?: string,
     address?: string,
     email?: string,

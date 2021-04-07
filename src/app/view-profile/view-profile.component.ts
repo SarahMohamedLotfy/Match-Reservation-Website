@@ -17,7 +17,7 @@ export class ViewProfileComponent implements OnInit {
     firstName: '',
     lastName: '',
     Date: '',
-    gender: true,
+    gender: 'male',
     city: '',
     address: '',
     email: '',
@@ -25,23 +25,64 @@ export class ViewProfileComponent implements OnInit {
   }
   submitted = false;
 
-  constructor(private matchService: MatchService) { }
+  editUsername = false;
+  editDate = false;
+  editAddress = false;
+  editCity = false;
+  editEmail = false;
+  editFirstName = false;
+  editGender = false;
+  editLastName = false;
+  editPassword = false;
+
+  constructor(private matchService: MatchService) {
+    this.userObject.Date = (localStorage.getItem('day') || "") + (localStorage.getItem('month') || "") + (localStorage.getItem('year') || "")
+    this.userObject.address = localStorage.getItem('address') || ""
+    this.userObject.city = localStorage.getItem('city') || ""
+    this.userObject.email = localStorage.getItem('email') || ""
+    this.userObject.firstName = localStorage.getItem('firstName') || ""
+    this.userObject.gender = localStorage.getItem('gender') || ""
+    this.userObject.lastName = localStorage.getItem('lastName') || ""
+    this.userObject.password = localStorage.getItem('password') || ""
+    this.userObject.username = localStorage.getItem('username') || ""
+   }
 
   ngOnInit(): void {
   }
 
-  submitSignup(form:any,formObj:any): void {
-    this.matchService.submitSignup(formObj)
+  editUser(form:any,formObj:any): void {
+    this.matchService.editUser(formObj)
     .subscribe(
       response => {
         console.log("signed up");
         this.isEdit = true;
+
+        localStorage.setItem('day', formObj.day)
+        localStorage.setItem('month', formObj.moth)
+        localStorage.setItem('year', formObj.year)
+        localStorage.setItem('address', formObj.address)
+        localStorage.setItem('city', formObj.city)
+        localStorage.setItem('email', formObj.email)
+        localStorage.setItem('firstName', formObj.firstName)
+        localStorage.setItem('gender', formObj.gender)
+        localStorage.setItem('lastName', formObj.lastName)
+        localStorage.setItem('password', formObj.password)
+        localStorage.setItem('username', formObj.username)
       },
         error => {
           console.log(error);
         });
       form.resetForm();
       this.isEdit = false;
+      this.editUsername = false;
+      this.editDate = false;
+      this.editAddress = false;
+      this.editCity = false;
+      this.editEmail = false;
+      this.editFirstName = false;
+      this.editGender = false;
+      this.editLastName = false;
+      this.editPassword = false;
   }
 
 }
