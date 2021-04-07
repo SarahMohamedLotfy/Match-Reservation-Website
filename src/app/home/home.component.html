@@ -8,17 +8,12 @@
 
       <div class="arch-container">
         <a routerLink = '/addMatch'> Add Match</a>
-      <!-- </div>
-
-      <div class="arch-container"> -->
+      
         <a routerLink = '/addStaduim'> Add staduim</a>
-      <!-- </div>
-
-      <div class="arch-container"> -->
-        <a routerLink = '/registerGuest'> Register Now! </a>
-      <!-- </div>
-
-      <div class="arch-container"> -->
+      
+        <a routerLink = '/registerGuest' *ngIf="userType==2"> Register Now! </a>
+        <a routerLink = '/viewProfile' *ngIf="userType!=2"> Profile </a>
+      
         <a routerLink = '/viewMatchDetail'> View Matches Details </a>
       </div>
 
@@ -32,7 +27,7 @@
       We are misterables and hope to pass in the integration phase.
     </div>
 
-    <div class="admin-container" *ngIf="admin">
+    <div class="admin-container" *ngIf="userType==3">
 
       <div class="">
         <a routerLink = '/viewRequests'> View Requests </a>
@@ -45,7 +40,7 @@
     </div>
     
 
-    <button mat-raised-button class="btn-effect">Click here to see effect!</button>
+    <button mat-raised-button class="btn-effect" [routerLink]="'/addMatch'">View All Matches</button>
 
 </div>
 </body>

@@ -1,0 +1,84 @@
+<body>
+
+    <div class="upper-container">
+        Hello {{userObject.firstName}}!
+    </div>
+
+    <form style="width: 50%; margin: auto; padding: 50px;" #myForm="ngForm">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input required ngModel name="username" #username="ngModel" id="username" type="text" class="form-control border-control" [(ngModel)]="userObject.username">
+            <div class="alert alert-danger" *ngIf="username.touched && !username.valid">Username is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="userPassword">Password</label>
+            <input required minlength="8" maxlength="16" id="userPassword" ngModel name="userPassword" #userPassword="ngModel" type="password" placeholder="Password" class="form-control border-control" [(ngModel)]="userObject.password">
+            <div class="alert alert-danger" *ngIf="userPassword.touched && !userPassword.valid">Username is required.</div>
+            <!-- <span *ngIf="userPassword.controls.password.hasError('pattern') && userPassword.get('password').touched" class="alert alert-danger">Weak password</span> -->
+        </div>
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input required id="firstName" type="text" class="form-control" [(ngModel)]="userObject.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input required id="lastName" type="text" class="form-control" [(ngModel)]="userObject.lastName" name="lastName">
+        </div>
+
+        <!-- birthdate -->
+        Birthdate
+        <div class="form-group" style="border-style:none">
+            <label for="exampleInputPassword1">Date</label>
+            <input id="date" type="date" min="1950-01-20" max="2019-05-20" name="Date" [(ngModel)]="userObject.Date" />
+        </div>
+
+        <!-- gender -->
+        Gender
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="maleRadios1" value="option1" checked [(ngModel)]="userObject.gender" name="gender">
+            <label class="form-check-label" for="maleRadios1">
+                male
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="femaleRadios2" value="option2">
+            <label class="form-check-label" for="femaleRadios2">
+                female
+            </label>
+        </div>
+
+        <!-- city -->
+        <div class="form-group">
+            <label for="city">City</label>
+            <input required id="city" type="text" class="form-control" [(ngModel)]="userObject.city" name="city">
+        </div>
+
+        <!-- address -->
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input id="address" type="text" class="form-control" [(ngModel)]="userObject.address" name="address">
+        </div>
+
+        <!-- email address -->
+        <div class="form-group">
+            <label for="emailAddress">Email Address</label>
+            <input required id="emailAddress" type="text" class="form-control" [(ngModel)]="userObject.email" name="email">
+        </div>
+
+        <!-- role -->
+        <div class="form-group">
+            <label required for="roleFormControl">Role</label>
+            <select class="form-control" id="roleFormControl" [(ngModel)]="userObject.role" name="role">
+                <option>Manager</option>
+                <option>Fan</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" (click)="submitSignup(myForm,myForm.value)">Submit</button>
+        
+    </form>
+
+</body>

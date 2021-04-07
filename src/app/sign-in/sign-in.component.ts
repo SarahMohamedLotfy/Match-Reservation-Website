@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { userData } from '../sign-up/userData';
 import {MatchService} from 'src/app/match.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,7 +10,7 @@ import {MatchService} from 'src/app/match.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private matchService: MatchService) { }
+  constructor(private matchService: MatchService, private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -37,6 +38,8 @@ export class SignInComponent implements OnInit {
         console.log("logged in");
         this.successful = true;
         this.wrongUser = false;
+        localStorage.setItem('token', response.token)
+        this._router.navigate(['/'])
       },
         error => {
           console.log(error);

@@ -8,10 +8,11 @@ import {MatchService} from 'src/app/match.service';
 })
 export class HomeComponent implements OnInit {
 
-  admin = true;
+  userType: number = -1;
 
   constructor(private matchService: MatchService) { }
 
   ngOnInit(): void {
+    this.userType = 1;
   }
 }

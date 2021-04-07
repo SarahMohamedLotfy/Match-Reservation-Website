@@ -2,11 +2,6 @@
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 style-table">
 
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef> id </th>
-            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-        </ng-container>
-
         <ng-container matColumnDef="username">
             <th mat-header-cell *matHeaderCellDef> username </th>
             <td mat-cell *matCellDef="let element"> {{element.username}} </td>
@@ -14,7 +9,7 @@
 
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.firstNname}}  {{element.lastName}} </td>
         </ng-container>
 
         <ng-container matColumnDef="address">
@@ -30,8 +25,8 @@
         <ng-container matColumnDef="approve/disapprove">
             <th mat-header-cell *matHeaderCellDef> approve/disapprove </th>
             <td mat-cell *matCellDef="let element; let i = index">                   
-                <button mat-raised-button class="btn-effect" (click)="removeRow(i, element.id)">approve</button>
-                <button mat-raised-button class="btn-effect" (click)="removeRow(i, element.id)">delete request</button>
+                <button mat-raised-button class="btn-effect" (click)="approveUser(element.username)">approve</button>
+                <button mat-raised-button class="btn-effect" (click)="deleteUser(element.username)">delete request</button>
             </td>
         </ng-container>
 
@@ -40,8 +35,5 @@
 
     </table>
 
-    {{showIndex}}
-    <br>
-    {{showIdRemoved}}
 
 </body>

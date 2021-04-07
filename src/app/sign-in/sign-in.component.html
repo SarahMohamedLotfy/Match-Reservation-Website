@@ -17,14 +17,14 @@
     <button class="btn btn-primary" (click)="submitLogin(myForm,myForm.value)">Submit</button>
 </form>
 
-<div *ngIf="successful" class="view-msg">
+<!-- <div *ngIf="successful" class="view-msg">
     Login Successful !!
 
     <br>
     Return to Home page?
     <button [routerLink]="'/'" class="btn btn-primary"> OK </button>
 
-</div>
+</div> -->
 
 <div *ngIF="wrongUser" class="view-msg">
     Wrong User !

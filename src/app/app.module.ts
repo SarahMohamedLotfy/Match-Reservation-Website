@@ -21,6 +21,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { AdminApproveComponent } from './admin-approve/admin-approve.component';
 import { ViewAllUsersComponent } from './view-all-users/view-all-users.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     SignInComponent,
     ViewMatchDetailComponent,
     AdminApproveComponent,
-    ViewAllUsersComponent
+    ViewAllUsersComponent,
+    ViewProfileComponent
     ],
   imports: [
     BrowserModule,
