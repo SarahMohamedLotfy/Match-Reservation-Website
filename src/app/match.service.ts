@@ -99,6 +99,11 @@ export class MatchService {
     return this.http.post(`${url}/registeruser/:user_name/:user_type/:first_name/:last_name/:pass/:mail/:gender/:address/:city/:day/:month/:year`,userInfo);
   }
 
+  loggedIn() {
+    // returns if a token exists, i.e. if there is a user logged in
+    return !!localStorage.getItem('token')
+  }
+
   ///////////////////// for admin /////////////////////////
 
   deleteUser (userInfo :any): Observable<any>
