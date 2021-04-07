@@ -104,6 +104,10 @@ export class MatchService {
     return !!localStorage.getItem('token')
   }
 
+  logoutUser() {
+    localStorage.removeItem('token')
+  }
+
   ///////////////////// for admin /////////////////////////
 
   deleteUser (userInfo :any): Observable<any>

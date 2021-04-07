@@ -14,7 +14,7 @@
         <a routerLink = '/registerGuest' *ngIf="!matchService.loggedIn()"> Register Now! </a>
         <a routerLink = '/viewProfile' *ngIf="matchService.loggedIn()"> Profile </a>
       
-        <a routerLink = '/' *ngIf="matchService.loggedIn()"> logout </a>
+        <a routerLink = '/' *ngIf="matchService.loggedIn()" (click)="matchService.logoutUser()"> log out </a>
 
 
       </div>
