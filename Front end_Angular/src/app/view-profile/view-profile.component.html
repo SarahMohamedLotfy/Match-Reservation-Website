@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<body>
+
+    <div class="upper-container">
+        Hello {{userObject.firstName}}!
+    </div>
+
+    <form style="width: 50%; margin: auto; padding: 50px;" #myForm="ngForm">
+        <div class="form-group">
+            <label for="username">Username {{userObject.username}}</label>
+            <button mat-raised-button (click)="editUsername=true">edit</button>
+            <input required ngModel name="username" #username="ngModel" id="username" type="text" class="form-control border-control" [(ngModel)]="userObject.username" *ngIf="editUsername">
+            <!-- <div class="alert alert-danger" *ngIf="username.touched && !username.valid">Username is required.</div> -->
+        </div>
+
+        <div class="form-group">
+            <label for="userPassword">Password {{userObject.userPassword}}</label>
+            <button mat-raised-button (click)="editPassword=true">edit</button>
+            <input required minlength="8" maxlength="16" id="userPassword" ngModel name="userPassword" #userPassword="ngModel" type="password" placeholder="Password" class="form-control border-control" [(ngModel)]="userObject.userPassword" *ngIf="editPassword">
+            <!-- <div class="alert alert-danger" *ngIf="userPassword.touched && !userPassword.valid">Username is required.</div> -->
+            <!-- <span *ngIf="userPassword.controls.password.hasError('pattern') && userPassword.get('password').touched" class="alert alert-danger">Weak password</span> -->
+        </div>
+
+        <div class="form-group">
+            <label for="firstName">First Name  {{userObject.firstName}}</label>
+            <button mat-raised-button (click)="editFirstName=true">edit</button>
+            <input required id="firstName" type="text" class="form-control" [(ngModel)]="userObject.firstName" name="firstName" *ngIf="editFirstName">
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name  {{userObject.lastName}}</label>
+            <button mat-raised-button (click)="editLastName=true">edit</button>
+            <input required id="lastName" type="text" class="form-control" [(ngModel)]="userObject.lastName" name="lastName" *ngIf="editLastName">
+        </div>
+
+        <!-- birthdate -->
+        Birthdate
+        <div class="form-group" style="border-style:none">
+            <label for="exampleInputPassword1">{{userObject.Date}}</label>
+            <button mat-raised-button (click)="editDate=true">edit</button>
+            <input id="date" type="date" min="1950-01-20" max="2019-05-20" name="Date" [(ngModel)]="userObject.Date" *ngIf="editDate" />
+        </div>
+
+        <!-- gender -->
+        Gender
+        {{userObject.gender}}
+        <button mat-raised-button (click)="editGender=true">edit</button>
+        <section class="example-section" *ngIf="editGender">
+            <label class="example-margin">Gender</label>
+            <mat-radio-group [(ngModel)]="userObject.gender" name="gender">
+              <mat-radio-button class="example-margin" value="male">
+                Male
+              </mat-radio-button>
+              <mat-radio-button class="example-margin" value="female">
+                Female
+              </mat-radio-button>
+            </mat-radio-group>
+        </section>
+
+        <!-- city -->
+        <div class="form-group">
+            <label for="city">City {{userObject.city}}</label>
+            <button mat-raised-button (click)="editCity=true">edit</button>
+            <input required id="city" type="text" class="form-control" [(ngModel)]="userObject.city" name="city" *ngIf="editCity">
+        </div>
+
+        <!-- address -->
+        <div class="form-group">
+            <label for="address">Address {{userObject.address}}</label>
+            <button mat-raised-button (click)="editAddress=true">edit</button>
+            <input id="address" type="text" class="form-control" [(ngModel)]="userObject.address" name="address" *ngIf="editAddress">
+        </div>
+
+        <!-- email address -->
+        <div class="form-group">
+            <label for="emailAddress">Email Address {{userObject.email}} </label>
+            <button mat-raised-button (click)="editEmail=true">edit</button>
+            <input required id="emailAddress" type="text" class="form-control" [(ngModel)]="userObject.email" name="email" *ngIf="editEmail">
+        </div>
+
+        <button class="btn btn-primary" (click)="editUser(myForm,myForm.value)">Submit</button>
+        
+    </form>
+
+</body>

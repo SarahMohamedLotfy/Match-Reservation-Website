@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<form style="width: 50%; margin: auto;" #myForm="ngForm">
+    <div class="form-group">
+        <label for="userName">Username</label>
+        <input required ngModel name="username" #username="ngModel" id="username" type="text" class="form-control border-control" [(ngModel)]="userObject.username">
+        <div class="alert alert-danger" *ngIf="username.touched && !username.valid">Username is required.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="userPassword">Password</label>
+        <input required minlength="8" maxlength="16" id="userPassword" ngModel name="userPassword" #userPassword="ngModel" type="password" placeholder="Password" class="form-control border-control" [(ngModel)]="userObject.userPassword">
+        <div class="alert alert-danger" *ngIf="userPassword.touched && !userPassword.valid">Username is required.</div>
+    </div>
+
+    <button class="btn btn-primary" (click)="submitLogin(myForm,myForm.value)">Submit</button>
+</form>
+
+<!-- <div *ngIf="successful" class="view-msg">
+    Login Successful !!
+
+    <br>
+    Return to Home page?
+    <button [routerLink]="'/'" class="btn btn-primary"> OK </button>
+
+</div> -->
+
+<div *ngIF="wrongUser" class="view-msg">
+    Wrong User !
+    <br>
+    Either unsername or password is incorrect
+    <br>
+    Please check your username and password and try again.
+</div>
+
+

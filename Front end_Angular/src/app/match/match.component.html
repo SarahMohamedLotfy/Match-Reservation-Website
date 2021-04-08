@@ -1,0 +1,114 @@
+<div class="container"> 
+   <p style="color:purple;  font-weight: bold; font-size: 30px; padding-bottom: 20px;">Matche details</p>
+
+   <a class ="home" routerLink = '/'> Home Page</a>
+
+   <table class="styled-table">
+      <tbody>
+              <tr class="active-row">
+              <td style="color: purple;" >Home Team:</td>
+              <td>{{matchhomeTeams}}</td>
+               </tr>
+               <tr class="active-row">
+                  <td style="color: purple;">Away Team:</td>
+                  <td>{{matchawayTeams}}</td>
+              </tr>
+              <tr class="active-row">
+               <td style="color: purple;">Match Venue:</td>
+               <td>{{matchdet.venue_id }}</td>
+           </tr>
+             
+        <tr class="active-row">
+         <td style="color: purple;">Match Date:</td>
+         <td>{{matchdet.match_date }}</td>
+     </tr>
+
+     <tr class="active-row">
+      <td style="color: purple;">Main Referee:</td>
+      <td>{{matchref.first_name}}</td>
+  </tr>
+  <tr class="active-row">
+      <td style="color: purple;">Linesman 1:</td>
+      <td>{{matchref1.first_name}}</td>
+  </tr>
+  <tr class="active-row">
+      <td style="color: purple;">Linesman 2:</td>
+      <td>{{matchref2.first_name}}</td>
+  </tr>
+      </tbody>
+  </table>
+
+
+
+  <br>
+  <p  style="color:purple;  font-weight: bold; font-size: 27px; padding-bottom: 20px;">Cancel reservation</p>
+
+<div  classs="devcancel">
+  <div >
+    <label for="exampleInputEmail1">Your seats</label>
+    <select  type="number"value="11" [(ngModel)]="seattobecancled" name="canceledseat"  >
+        <option hidden selected>Select one...</option>
+        <option *ngFor="let seat of seatsofuser" [ngValue]="seat" >{{seat.seat_id}}</option>
+    </select>
+  </div>
+   <button  class="button"   (click)="Cancelreserv()" > Cancel reservation </button>
+  </div>
+<br>
+<br>
+  <p  style="color:purple;  font-weight: bold; font-size: 27px; padding-bottom: 20px;">Reserve seats</p>
+
+<div style="display:inline-block;vertical-align:top;">
+ <input class="larger" type="checkbox" [disabled] = "true"
+ [checked]=false> 
+</div>
+<div style="display:inline-block;">
+ <div>Vacant</div>
+</div>
+<br>
+<div  style="display:inline-block;vertical-align:top;">
+ <input class="larger" type="checkbox" [disabled] = "true"
+ [checked]=true> 
+</div>
+<div  style="display:inline-block;">
+ <div>Reserved</div>
+</div>
+
+
+  <div   class="grid-container">
+  <div class="grid-item" *ngFor="let item of options">
+    <input class="larger" type="checkbox" [disabled] = "checked(item)"
+    [checked]="checked(item)"
+    (change)="onChange($event.target, item)"
+    > {{item}}
+  </div>
+  </div>
+  <br >{{selectednew.length}} items selected <br>    
+  <h3 >Selected seats</h3>
+  {{selectednew | json}}
+  <br>
+  <br>
+
+  <button  class="button"   (click)="save()">Save</button>
+
+  
+
+<br>
+
+<div id="formm" style="display: none;">
+<form  #myForm="ngForm"  (ngSubmit) = "submit(myForm)" action="/action_page.php">
+ <label style="font-size: 15px;" >Enter your credit card number</label>
+ <input  class="inputcard"  type="text" id="credit" ngModel name="credit" placeholder="Your credit card number">
+
+ <label style="font-size: 15px;" for="lname">Enter your pin number</label>
+ <input class="inputcard" type="password" id="pass" ngModel name="pass" placeholder="Your password" maxlength="4" size="4">
+
+ <button  class="inputcard" >Submit </button>
+
+
+
+</form>
+</div>
+
+<div id="ticket" style="display: none;"> 
+ Your ticket number is : {{ticketnumber}}
+</div>

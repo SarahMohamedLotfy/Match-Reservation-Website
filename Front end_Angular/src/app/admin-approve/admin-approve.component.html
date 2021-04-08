@@ -1,0 +1,36 @@
+
+<div class="container">
+    <p style="color:purple;  font-weight: bold; font-size: 30px; padding-bottom: 20px;">Users</p>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th scope="col">USERNAME</th>
+                <th scope="col">NAME</th>
+                <th scope="col">ADDRESS</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col"></th>
+                <th > approve/disapprove </th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+                <tr class="active-row"*ngFor="let element of elements">
+                    <td>{{element.user_name }}</td>
+                    <td>{{element.first_name}}  {{element.last_name}}</td>
+                    <td>{{element.address}}</td>
+                    <td>{{element.mail}}</td>
+                    <td>  <button mat-raised-button class="btn-effect" (click)="deleteUser(element.user_name)">delete user</button>                    </td>
+
+                    <td >                   
+                        <button mat-raised-button class="btn-effect" (click)="approveUser(element.user_name)">approve</button>
+                        <button mat-raised-button class="btn-effect" (click)="deleteUser(element.user_name)">delete request</button>
+                    </td>
+                                  </tr>
+        </tbody>
+    </table>
+      
+    </div>
+
+
+

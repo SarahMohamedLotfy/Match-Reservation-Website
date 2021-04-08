@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<body>
+
+    <div class="upper-container">
+
+        <p>Hello Guest!</p>
+        
+        <div class="arch-table">
+        <div class="arch-container" style="float: left;">
+        New here? 
+        <a routerLink = '/registerGuest/signUp'> sing up </a>
+        </div>
+
+        <div class="arch-container" style="float: right;">
+        already registered? 
+        <a routerLink = '/registerGuest/signIn'> sing in </a>
+        </div>
+        </div>
+
+        <button [routerLink]="'/'" class="btn btn-primary"> Return to home page </button>
+
+    </div>
+
+</body>
+
+<router-outlet></router-outlet>

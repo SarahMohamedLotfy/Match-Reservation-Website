@@ -1,0 +1,101 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!-- Username (Must be Unique)  => textbox
+2. Password     => textbox , password
+3. First Name   => textbox
+4. Last Name    => textbox
+5. Birth Date   => 
+6. Gender
+7. City
+8. Address (Optional and could be skipped by the user).
+9. Email Address.
+10. Role: Manager/ Fan -->
+<body>
+    
+    <form style="width: 50%; margin: auto; padding: 50px;" #myForm="ngForm">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input required ngModel name="username" #username="ngModel" id="username" type="text" class="form-control border-control" [(ngModel)]="userObject.username">
+            <div class="alert alert-danger" *ngIf="username.touched && !username.valid">Username is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="userPassword">Password</label>
+            <input required minlength="8" maxlength="16" id="userPassword" ngModel name="userPassword" #userPassword="ngModel" type="password" placeholder="Password" class="form-control border-control" [(ngModel)]="userObject.userPassword">
+            <div class="alert alert-danger" *ngIf="userPassword.touched && !userPassword.valid">Username is required.</div>
+            <!-- <span *ngIf="userPassword.controls.password.hasError('pattern') && userPassword.get('password').touched" class="alert alert-danger">Weak password</span> -->
+        </div>
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input required id="firstName" type="text" class="form-control" [(ngModel)]="userObject.firstName" name="firstName">
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input required id="lastName" type="text" class="form-control" [(ngModel)]="userObject.lastName" name="lastName">
+        </div>
+
+        <!-- birthdate -->
+        Birthdate
+        <div class="form-group" style="border-style:none">
+            <label for="exampleInputPassword1">Date</label>
+            <input id="date" type="date" min="1950-01-20" max="2019-05-20" name="Date" [(ngModel)]="userObject.Date" />
+        </div>
+
+        <!-- gender -->
+        <section class="example-section">
+            <label class="example-margin">Gender</label>
+            <mat-radio-group [(ngModel)]="userObject.gender" name="gender">
+              <mat-radio-button class="example-margin" value="male">
+                Male
+              </mat-radio-button>
+              <mat-radio-button class="example-margin" value="female">
+                Female
+              </mat-radio-button>
+            </mat-radio-group>
+        </section>
+
+        <!-- city -->
+        <div class="form-group">
+            <label for="city">City</label>
+            <input required id="city" type="text" class="form-control" [(ngModel)]="userObject.city" name="city">
+        </div>
+
+        <!-- address -->
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input id="address" type="text" class="form-control" [(ngModel)]="userObject.address" name="address">
+        </div>
+
+        <!-- email address -->
+        <div class="form-group">
+            <label for="emailAddress">Email Address</label>
+            <input required id="emailAddress" type="text" class="form-control" [(ngModel)]="userObject.email" name="email">
+        </div>
+
+        <!-- role -->
+        <div class="form-group">
+            <label required for="roleFormControl">Role</label>
+            <select class="form-control" id="roleFormControl" [(ngModel)]="userObject.role" name="role">
+                <option>Manager</option>
+                <option>Fan</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary" (click)="submitSignup(myForm,myForm.value)">Submit</button>
+        
+    </form>
+
+    <div *ngIf="isEdit" class="view-msg">
+        Your request have been submitted.
+        <br>
+        Please check your email and sign up later when you are approved.
+
+        <br>
+        Return to Home page?
+        <button [routerLink]="'/'" class="btn btn-primary"> OK </button>
+
+    </div>
+
+</body>

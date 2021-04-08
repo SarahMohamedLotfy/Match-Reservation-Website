@@ -1,0 +1,56 @@
+
+
+<body>
+  <div class="opacity-container">
+    <div class="our-name">
+      Welcome To Our Miserable Matches!
+    </div>
+
+    <div class="visitor-container">
+
+      <div class="arch-container">
+
+        <a routerLink = '/matches'> View Matches </a>
+
+        <a routerLink = '/registerGuest' *ngIf="!matchService.loggedIn()"> Register Now! </a>
+        <a routerLink = '/viewProfile' *ngIf="matchService.loggedIn()"> Profile </a>
+      
+        <a routerLink = '/' *ngIf="matchService.loggedIn()" (click)="matchService.logoutUser()"> log out </a>
+
+
+      </div>
+
+    </div>
+
+    <div class="info-container">
+      You can view matched, reserve, or delete reservation.
+    </div>
+
+    <div class="second-info-container">
+      We are misterables and hope to pass in the integration phase.
+    </div>
+
+    <div class="admin-container" *ngIf="userType=='3'">
+
+      <div class="">
+        <a routerLink = '/addMatch'> Add Match</a>
+      
+        <a routerLink = '/addStaduim'> Add staduim</a>
+        <a routerLink = '/viewRequests'> View Requests </a>
+      <!-- </div>
+      
+      <div class=""> -->
+        <a routerLink = '/viewAllUsers'> View All Users </a>
+        <a routerLink = '/matchesmanager'> View Matches </a>
+
+      </div>
+
+    </div>
+    
+
+    <button mat-raised-button class="btn-effect" [routerLink]="'/addMatch'">View All Matches</button>
+
+</div>
+</body>
+
+<!-- https://smartslider3.com/blog/homepage-slider-examples/ -->
